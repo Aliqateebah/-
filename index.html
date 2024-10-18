@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تحويل النص إلى فيديو مرئي باستخدام الذكاء الاصطناعي</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>تحويل النص إلى فيديو مرئي</h1>
+        <textarea id="text-input" placeholder="اكتب النص هنا..." rows="10"></textarea>
+
+        <div class="controls">
+            <label for="voice-select">اختر صوت القراءة:</label>
+            <select id="voice-select"></select>
+            <button id="generate-video">إنشاء الفيديو</button>
+            <button id="download-video" style="display: none;">تحميل الفيديو</button>
+        </div>
+
+        <div class="video-output" id="video-output"></div>
+
+        <div class="settings">
+            <h2>الإعدادات المتقدمة</h2>
+            <label for="background-select">اختر خلفية الفيديو:</label>
+            <select id="background-select">
+                <option value="black">أسود</option>
+                <option value="white">أبيض</option>
+                <option value="blue">أزرق</option>
+                <option value="green">أخضر</option>
+                <option value="custom">خلفية مخصصة</option>
+            </select>
+            <input type="color" id="custom-background" style="display: none;">
+            <label for="video-duration">مدة الفيديو (ثواني):</label>
+            <input type="number" id="video-duration" value="10" min="5" max="120">
+            <label for="video-resolution">دقة الفيديو:</label>
+            <select id="video-resolution">
+                <option value="640x480">640x480</option>
+                <option value="1280x720">1280x720</option>
+                <option value="1920x1080">1920x1080</option>
+            </select>
+        </div>
+
+        <div class="feedback">
+            <h2>الملاحظات:</h2>
+            <ul id="notes-list"></ul>
+        </div>
+
+        <footer>
+            <p>حقوق النشر © 2024. جميع الحقوق محفوظة.</p>
+        </footer>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@ffmpeg/ffmpeg@latest"></script>
+    <script src="script.js"></script>
+</body>
+</html>
